@@ -1,0 +1,48 @@
+h1 {
+    color: #7973b6;
+    font-size: xx-large;
+}
+
+#top-button a:link,
+#top-button a:visited {
+    text-decoration: none;
+    color: #1e9490;
+    float :right;
+    margin-right: 1rem;
+
+}
+
+#top-button a:hover,
+#top-buttom a:active {
+    color: #7973b6;
+}
+
+#subtitle h2 {
+    color: black;
+}
+
+#date h3 {
+    color: rgb(90, 89, 89);
+}
+
+#content h3 {
+    color: #7973b6;
+    margin: 0 1rem;
+}
+
+#title a:link,
+#title a:visited {
+    text-decoration: none;
+    display: inline-block;
+    color: #1e9490;
+}
+
+#title a:hover,
+#title a:active {
+    color: #7973b6;
+
+}
+
+hr {
+    margin: 0 1rem;
+}

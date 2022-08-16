@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    My Tech Blog
+{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "tech_blog/index.css" %}"/>
+{% endblock %}
+
+{% block content %}
+    <a id="top"></a>
+    <h1>Welcome to my Tech Blog!</h1>
+
+    <div id="subtitle">
+        <h2>My Latest Post!</h2>
+    </div>
+
+    <section id="latest-posts">
+        <ul>
+            {% for post in posts %}
+                <section id = "title">
+                    <a href="{% url "single-tech-post" post.slug %}">
+                        <h2>{{ post.title }}</h2>
+                    </a>
+                </section>
+
+                <section id = "date">
+                    <h3>{{ post.date }}</h3>
+                </section>
+
+                <section id = "content">
+                    <h3>{{ post.content|linebreaks }}</h3>
+                </section>
+
+                <hr>
+
+                <section id="top-button">
+                    <a href="#top">Back To Top</a>
+                </section>
+
+            {% endfor %}
+        </ul>
+    </section>
+
+{% endblock %}

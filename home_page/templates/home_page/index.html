@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "home_page/index.css" %}"/>
+{% endblock %}
+
+
+{% block content %}
+    <div id = "profile">
+        <a href="{% url "about" %}">
+        <img src="{% static "home_page/images/daniel.JPG" %}" alt="Daniel - The Author Of This Blog"/>
+        </a>
+    </div>
+
+    <h1>Welcome to My Website!</h1>
+    <div id="intro">
+        <h2>
+            My name is Daniel, I have a passion for programming, One Piece, and tech in general! 
+            This blog is a space for me to nerd-out about my passions and I hope you enjoy it!
+        </h2>
+    </div>
+
+    <section id="latest-posts">
+        <h2>My Latest Post!</h2>
+        <ul>
+            {% for post in programming_post %}
+                <a href="{% url "single-portfolio-post" post.slug %}">
+                    <img src="{{ post.image.url }}" alt="{{ post.title }}"/>
+                    <h3>{{ post.title }}</h3>
+                </a>
+            {% endfor %}
+
+            {% for post in op_post %}
+                <a href="{% url "single-op-post" post.slug %}">
+                    <img src="{{ post.image.url }}" alt="{{ post.title }}"/>
+                    <h3>{{ post.title }}</h3>
+                </a>
+            {% endfor %}
+            
+            {% for post in tech_post %}
+                <a href="{% url "single-tech-post" post.slug %}">
+                    <img src="{{ post.image.url }}" alt="{{ post.title }}"/>
+                    <h3>{{ post.title }}</h3>
+                </a>
+            {% endfor %}
+            
+        </ul>
+    </section>
+
+{% endblock %}

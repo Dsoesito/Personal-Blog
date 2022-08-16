@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    {{ tech_post.title }}
+{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "tech_blog/single-tech-post.css" %}"/>
+{% endblock %}
+
+{% block content %}
+    <img src="{{ tech_post.image.url }}" alt="{{ tech_post.title }}"/>
+
+    <section id="title">
+        <h1>{{ tech_post.title }}</h1>
+    </section>
+
+    <section id="author">
+        <h2>By: {{tech_post.author }}</h2>
+    </section>
+
+    <section id="date">
+        <h3>{{ tech_post.date }}</h3>
+    </section>
+
+    <section id="content">
+        <h3>{{ tech_post.content|linebreaks }}</h3>
+    </section>
+
+    <section id="comments">
+        <ul>
+            {% if comments_empty %}
+                <h2>No comments yet, be the first to comment!</h2>
+            {% else %}
+                <h1>Comments:</h1>
+                {% for comment in comments %}
+                    <h3>{{ comment.user_name }}</h3>
+                    <p>{{ comment.text|linebreaks }}</p>
+                    <hr>
+                {% endfor %}
+            {% endif %}
+        </ul>
+    </section>
+
+    <section id="comment-form">
+        <h2>Your Comment</h2>
+        <form action="{% url "single-tech-post" tech_post.slug %}" method="POST">
+            {% csrf_token %}
+            {% for form_field in form %}
+            <div class="form-control">
+                {{ form_field.label_tag }}
+                {{ form_field }}
+                {{ form_field.errors}}
+            </div>
+            {% endfor %}
+            <button>Save Comment</button>
+        </form>
+    </section>
+
+{% endblock %}
+

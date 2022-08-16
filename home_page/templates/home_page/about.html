@@ -1,0 +1,28 @@
+{%extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    About
+{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "home_page/about.css" %}"/>
+{% endblock %}
+
+
+{% block content %}
+
+    <div id = "profile">
+        <img src="{% static "home_page/images/daniel.JPG" %}" alt="Daniel - The Author Of This Blog"/>
+    </div>
+
+    <div id="profile">
+        <h1>About The Author!</h1>
+        <h2>
+            My name is Daniel I am a landscape design technician working towards my LARE accreditations. 
+            I have a passion for programming, One Piece and tech! This blog is just for me to practice 
+            my programming skills and nerd out about my interest! I'm working towards becoming a full time
+            programmer and hope to eventually make this a full time job. Please enjoy my blog! 
+        </h2>
+    </div>
+{% endblock %}

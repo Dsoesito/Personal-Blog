@@ -1,0 +1,27 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static "app.css" %}">
+        <title>{% block title %}{% endblock %}</title>
+        {% block css_files %}{% endblock %}
+    </head>
+    <body>
+        <header id="main-navigation">
+            <div>
+                <h2><a href="{% url "home-page" %}">Home Page</a></h2>
+                <h2><a href="{% url "portfolio-page" %}">Portfolio</a></h2>
+                <h2><a href="{% url "op-page" %}">One Piece</a></h2>
+                <h2><a href="{% url "tech-page" %}">Tech </a></h2>
+            </div>
+        </header>
+
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>
