@@ -33,3 +33,7 @@ Each blog post can be viewed individually and users have the abilitu to leave co
 ### Biography Page
 ![Screen Shot 2022-08-16 at 11 03 59 PM](https://user-images.githubusercontent.com/99083937/185025675-35b7adf4-b6b7-43d6-9e6e-a27ac475c64f.png)
 Biography page giving a more detailed explanation of who I am and the purpose of thsi site
+
+## Thank you 
+
+If you would like to view my blog app, feel free to follow the link at the top of this post, but please, PLEASE, PLEASE do not post anything inapporpirate!
